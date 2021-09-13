@@ -11,22 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/series', function() {
-    $series = [
-        'Grey\'s Anatomy',
-        'La Casa de Papel',
-        'Mrs. Robot'
-    ];
-
-    $html = "<ul>";
-    foreach ($series as $serie) {
-        $html .= "<li>$serie</li>";
-    }
-    $html .= "</ul>";
-    
-    echo $html;
-});
+Route::get('/series', 'SeriesController@index');
